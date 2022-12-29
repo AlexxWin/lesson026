@@ -1,0 +1,425 @@
+@media (max-width: 1200px)
+    .menu
+        &_item
+            padding-right: 35px
+        &_link
+            font-size: 13px
+    
+    .promo
+        &_header
+            font-size: 50px
+
+    .reasons
+        &_block
+            align-items: flex-start
+        &_descr
+            width: 300px
+        .title
+            font-size: 35px
+
+    footer    
+        .footer
+                &_wrapper > div 
+                    width: 50%
+                    &:nth-child(1)
+                        width: 25%
+                    &:nth-child(3)
+                        width: 25%
+                        display: flex 
+                        justify-content: flex-end
+                &_mobile
+                    display: flex
+                    a 
+                        margin: 0 3px
+                        img 
+                            width: 100%
+                        
+
+@media (min-width: 992px)  
+    footer
+        .footer_links
+
+            &_main 
+                a 
+                    &:hover
+                        color: blue
+                        transition: 0.5s
+
+        .footer_links_sub 
+        
+            a 
+                
+                &:hover
+                    color: green
+                    transition: 0.5s
+
+        .footer_links
+            .footer_links_lang 
+                              
+                &:hover
+                    color: red
+                    transition: 0.5s
+
+@media (max-width: 991px)
+    .menu
+        &_item
+            padding-right: 20px
+        &_link
+            font-size: 11px
+    .subheader
+        &_logo
+            img
+                width: 100%
+        &_official
+            font-size: 11px
+        &_phone
+            font-size: 14px
+
+        &_btn
+            margin-top: 21px
+            width: 90%
+            height: 40px
+            &:hover
+                background-image: linear-gradient(0.0deg, #1eacc7 0%, #4ce2ff 100%)
+          
+               
+    .promo
+        &_header
+            font-size: 40px
+        &_subheader
+            font-size: 29px
+        &_descr
+            padding: 0 25px
+        &_btn
+            &:hover
+                background-image: linear-gradient(0.0deg, #1eacc7 0%, #4ce2ff 100%)
+
+    .reasons
+           
+        &_block
+            flex-direction: column /* (направление основной оси : вертикальная сверху вниз) */
+            align-items: center
+        &_round
+            margin-right: 0
+        &_descr
+            width: 300px
+            margin-top: 20px
+        .title
+            font-size: 35px
+    .mobile
+        min-height: 855px
+        
+        &_item
+            width: 230px
+            height: 250px
+           
+        .subtitle
+            font-size: 15px
+
+    .mobile_item_subtitle
+        font-size: 20px
+   
+    footer
+            .footer_wrapper
+                flex-wrap: wrap /* (позволяет переносить элементы на следующую строку) */
+            
+            .footer_wrapper > div 
+                width: 100%
+                display: flex 
+                justify-content: center
+                margin-bottom: 20px
+                &:nth-child(1)
+                    order: 2
+                    width: 100%
+                &:nth-child(2)
+                    order: 1
+                    display: flex 
+                    justify-content: space-between
+
+                &:nth-child(3)
+                    order: 3
+                    width: 100%
+                    justify-content: center
+
+                .footer_links
+                  
+                    width: 280px
+                    margin: 0 auto
+                    
+                    &_main 
+                        padding: 0 0
+                        a 
+                            
+                            font-size: 13px
+                            font-weight: 500
+                          
+                                
+                             
+                    
+                    .footer_links_sub
+                        flex-wrap: wrap
+                        padding: 0 20px
+                        line-height: 25px
+                        
+
+@media (max-width: 767px)
+
+    
+    .menu
+        position: fixed
+        flex-direction: column /* (направление основной оси : вертикальная сверху вниз) */
+        justify-content: center /* (выравнивание по основной оси) */
+        align-items: center /* (выравнивание по перечной оси) */
+        top: 0
+        left: -100% /* (меню спрятано слева на 100%, чтоб его восстановить нужен класс активности &_active) */
+        width: 50%
+        height: 100vh /* (100% видимого пространства на устройстве) */
+        padding: 20px 15px
+        background-color: rgba(0,0,0,.8)
+        transition: 0.6s all
+        overflow: auto /* (если меню не помещается по высоте блока, то данное свойство позволяет скролить элементы) */
+        &_active /* (для проверке в инспекторе можно прописать <ul class="menu MENU_ACTIVE"> И меню должно появиться слева) */
+            left: 0
+
+        &_item
+            padding-right: 0
+            border: none /* (рамка отсутствует) */
+            margin: 10px 0
+        &_link
+            font-size: 19px
+
+    .hamburger
+        display: block
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+        width: 26px
+        height: 12px /* (сумма 2px ширины каждой палочки и по 2px margin-bottom для каждой палочки span. итого 2*3+2*3 ) */
+
+        span
+            display: block
+            height: 2px /* (ширина одной палочки 2 px) */
+            width: 100%
+            background-color: #fff
+            margin-bottom: 2px
+            transition: 0.5s all /* (плавность перехода для появления крестика) */
+        &_active
+            span
+                margin-bottom: -2px /* (чтобы выровнять крестик, с учетом margin-bottom: 2px в классе span) */
+                &:nth-child(1) /* (класс активности для первого спэна) */
+                    transform: translateY(3px) rotate(-45deg) /* (смещение на 3px  и вращение на -45 градусов) */
+                &:nth-child(2)
+                    display: none /* (второй спэн отключается, т.е становится не виден) */
+                &:nth-child(3)
+                    transform: translateY(3px)  rotate(45deg)
+
+    .xs-hidden
+        display: none /* (этот класс будет скрываться) */
+    .xs-visible
+        display: block
+
+    .subheader
+        &_phone
+            display: block
+            margin-top: 10px 
+            font-size: 16px
+            font-weight: 400
+            text-transform: uppercase
+            color: #ffffff
+            text-align: center
+        &_btn
+            display: block
+            width: 200px
+            height: 40px
+            margin: 0 auto /* (выравнивает кнопку по центру, но должен стоять display: block ) */
+            margin-top: 8px
+           
+    .promo
+        &_header
+            font-size: 20px
+            margin-top: 33px
+            padding: 0 10px
+            line-height: 30px
+            
+        &_subheader
+            font-size: 20px
+            
+    .promo_descr
+        display: none
+
+  
+    .mobile
+        .subtitle
+            font-size: 15px
+            
+
+
+    .uberx_img
+        width: 100%  
+
+
+
+@media (max-width: 575px)
+    nav
+        height: 30px
+        
+    header
+        height: 30px
+
+    .subheader
+        height: 60px
+        top: 30px
+        &_official
+            display: none /* (на данном раширении данный блок будет скрыт) */
+        &_logo
+            margin: 16px 
+        &_phone
+            font-size: 12px
+            font-weight: 400
+            text-transform: uppercase
+            margin-top: 11px
+        &_btn
+            width: 116px
+            height: 28px
+            font-size: 10px
+            margin-top: 6px
+           
+              
+    .promo
+        min-height: 400px
+        padding: 113px 0 35px 0
+        &_descr
+            display: none
+        &_header
+            font-size: 30px
+            padding: 0 40px
+            line-height: 35px
+        &_subheader
+            font-size: 20px
+            margin-top: 33px
+            padding: 0 13px
+            line-height: 30px
+        &_btn
+            width: 210px
+            height: 50px
+            margin-top: 69px
+    .menu
+        width: 85%
+        &_item
+            width: 100%
+            text-align: center
+            padding: 5px 0 /* (что бы расширить область на которую можно нажать, чтоб отреагировала ссылка) */
+        &_link
+            display: block /* (для того, чтоб нажимать на ссылку можно было на ширене всей строки, а не только непосредственно на слове) */
+       
+
+    .reasons
+        margin: 0 auto
+        padding: 22px 0 36px 0
+        &_block
+            
+            margin-top: 26px
+        &_round
+            width: 100px
+            height: 100px
+        &_descr
+            width: 100%
+            margin-top: 27px
+        &_subtitle
+            font-size: 16px
+        .title
+            font-size: 14px
+            line-height: 16px
+            margin-top: 15px
+        
+    .mobile
+        min-height: 1850px
+        padding: 22px 0 43px 0
+        
+        .label
+            
+            font-size: 11px
+            font-weight: 100
+            text-transform: uppercase
+            color: #ffffff
+        .title
+            margin-top: 15px
+            font-size: 16px
+        .subtitle
+            margin-top: 11px
+            font-size: 14px
+            padding: 0 20px 
+
+        .row
+            margin-top: 27px
+        .mobile_item
+            width: 290px
+            height: 254px
+            margin-bottom: 19px
+            padding-top: 81px
+            &_subtitle
+                font-size: 18px
+            
+    .require
+        padding: 25px 0 26px 0
+        &_list
+            margin-top: 17px
+        .title
+            font-size: 16px
+            margin-top: 15px
+        .subtitle
+            font-size: 14px
+            margin-top: 11px
+        
+        .require_block
+            margin: 0
+            &_list
+                margin-top: 17px
+        .require_block_nmb
+            margin-top: 0
+    .uberx
+       
+        padding: 22px 0 36px 0
+        min-height: 390px
+        background: none
+        background-color: #000
+        
+        .black
+            display: none
+    
+        &_img
+            width: 100%      
+    
+        .subtitle_white
+            display: none
+        .title_white
+            display: none
+            
+        .uberx_descr
+            
+            color: #ffffff
+    
+    
+    
+    .map
+     
+        min-height: 360px
+        padding: 25px 0 30px 0
+        .title
+            margin-top: 15px
+            font-size: 16px
+        .subtitle
+            margin-top: 10px
+            font-size: 14px
+        .map_link
+            bottom: 30px  
+    
+    footer   
+        .footer_divider
+            width: 253px 
+
+    
+               
+
+  
